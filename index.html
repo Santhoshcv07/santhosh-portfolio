@@ -1,0 +1,273 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Santhosh CV | Full Stack Developer & Engineering Student</title>
+    <!-- Google Fonts: Playfair Display + Poppins -->
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (free icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- AOS Library (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+<!-- NAVBAR -->
+<nav class="navbar" id="navbar">
+    <div class="nav-container">
+        <div class="logo">Santhosh CV</div>
+        <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+        <div class="nav-links" id="navLinks">
+            <a href="#home">Home</a>
+            <a href="#about">About</a>
+            <a href="#experience">Certificates</a>
+            <a href="#portfolio">Projects</a>
+            <a href="#contact">Contact</a>
+            <a href="#" class="download-cv-btn" id="cvDownloadNav"><i class="fas fa-download"></i> Download Resume</a>
+        </div>
+    </div>
+</nav>
+
+<!-- HERO Section -->
+<section id="home" class="hero">
+    <div class="container hero-grid">
+        <div class="hero-left" data-aos="fade-right" data-aos-duration="1000">
+            <div class="mini-text">✨ Get Ready To Start Work.</div>
+            <h1>I'm <span class="highlight">Developer</span><br>Santhosh CV</h1>
+            <p>Final-year Computer Science and Design Engineering student passionate about building modern web applications and solving real-world problems through software development.</p>
+            <div class="hero-buttons">
+                <a href="#about" class="btn-primary">About Me <i class="fas fa-arrow-right"></i></a>
+                <a href="#portfolio" class="btn-outline"><i class="fas fa-code"></i> View Projects</a>
+            </div>
+        </div>
+        <div class="hero-right" data-aos="fade-left" data-aos-duration="1000">
+            <img class="floating-img" src="images/profile.png" alt="Santhosh CV Portrait">
+        </div>
+    </div>
+</section>
+
+<!-- ABOUT Section -->
+<section id="about">
+    <div class="container about-grid">
+        <div class="about-img-frame" data-aos="zoom-in" data-aos-duration="900">
+            <img src="images/profile-aboutme.png" alt="Developer workspace">
+        </div>
+        <div class="about-right" data-aos="fade-left">
+            <div class="sub-red"><i class="fas fa-fire"></i> About me</div>
+            <div class="role-text">Full Stack Developer & Engineering Student</div>
+            <p class="about-desc">I am a final-year Computer Science and Design Engineering student from Canara Engineering College, Mangalore. I have experience in Java, MySQL, React.js, PHP, HTML, and CSS. I enjoy building full-stack applications, learning new technologies, and solving real-world problems through software development.</p>
+            <div class="info-grid">
+                <div class="info-item"><span>Name:</span> Santhosh CV</div>
+                <div class="info-item"><span>Location:</span> Sringeri, Chikkamagaluru</div>
+                <div class="info-item"><span>Email:</span> santhoshcv588@gmail.com</div>
+                <div class="info-item"><span>Degree:</span> BE in Computer Science & Design</div>
+                <div class="info-item"><span>Graduation:</span> 2026</div>
+            </div>
+            <div class="about-buttons">
+                <a href="#" class="btn-primary" id="downloadCVBtn"><i class="fas fa-download"></i> Download Resume</a>
+                <a href="#contact" class="btn-outline">Contact Me <i class="fas fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- EDUCATION & SKILLS combined section -->
+<section class="edu-skills-section">
+    <div class="container edu-skills-wrapper">
+        <div data-aos="fade-right">
+            <h3 class="section-title" style="font-size:2rem; margin-bottom:2rem;">My <span>Education</span></h3>
+            <div class="timeline">
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Bachelor of Engineering in Computer Science and Design Engineering</h3>
+                        <p>Canara Engineering College, Mangalore | 2022 - 2026 |</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Pre-University Education</h3>
+                        <p>JCBM PU College, Sringeri | 2020 - 2022 |</p>
+                    </div>
+                </div>
+                <div class="timeline-item">
+                    <div class="timeline-dot"></div>
+                    <div class="timeline-content">
+                        <h3>Secondary Education</h3>
+                        <p>Jaycess High School, Sringeri | 2019 - 2020 |</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div data-aos="fade-left">
+            <h3 class="section-title" style="font-size:2rem; margin-bottom:2rem;">My <span>Skills</span></h3>
+            <div class="skills-icon-grid">
+                <div class="skill-icon-item"><i class="fab fa-html5"></i><span>HTML5</span></div>
+                <div class="skill-icon-item"><i class="fab fa-css3-alt"></i><span>CSS3</span></div>
+                <div class="skill-icon-item"><i class="fab fa-js"></i><span>JavaScript</span></div>
+                <div class="skill-icon-item"><i class="fab fa-react"></i><span>React</span></div>
+                <div class="skill-icon-item"><i class="fab fa-python"></i><span>Python</span></div>
+                <div class="skill-icon-item"><i class="fas fa-database"></i><span>SQL</span></div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CERTIFICATES Section (including new AWS certificate) -->
+<section id="experience">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">My <span>Certificates</span></h2>
+        <div class="exp-grid">
+            <div class="exp-card" data-aos="zoom-in"><i class="fas fa-database"></i><h3>Introduction to SQL</h3><p>Simplilearn SkillUP – Professional certification covering database design, querying, data manipulation, and optimization techniques. Earned on 3rd September 2025.</p><a href="https://drive.google.com/file/d/1nAjQxm8Yh3PS6UGQxPEapu19sr1DTx4M/view?usp=drivesdk" class="cert-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Certificate</a></div>
+            <div class="exp-card" data-aos="zoom-in"><i class="fas fa-brain"></i><h3>AI for Students: Build Your Own Generative AI Model</h3><p>NxtWave – Hands-on workshop led by AI expert Abhinav Devaguptapu. Completed hands-on project, equipped with essential generative AI skills. Issued June 15, 2025.</p><a href="https://drive.google.com/file/d/1kqqA74k6kP-3cPXRRmwv-U7iGePZ0TwJ/view?usp=drivesdk" class="cert-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Certificate</a></div>
+            <div class="exp-card" data-aos="zoom-in"><i class="fas fa-leaf"></i><h3>Introduction to MongoDB (For Students)</h3><p>MongoDB, Inc. – NoSQL expertise, database fundamentals, and backend development skills. Completed on May 18, 2025.</p><a href="https://drive.google.com/file/d/19SYPlFwZx0fALQMDReSV3pNlyN6JeNWr/view?usp=drivesdk" class="cert-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Certificate</a></div>
+            <div class="exp-card" data-aos="zoom-in"><i class="fab fa-google"></i><h3>Google AI Essentials</h3><p>Coursera – Authorized by Google. Comprehensive AI & machine learning foundations. Verified credential issued May 18, 2025. Certificate ID: ZKGE1CXFE4WF.</p><a href="https://drive.google.com/file/d/1Rt8XBXEr4ZZL_82ql-jnKJQh0OXTsigL/view?usp=drivesdk" class="cert-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Certificate</a></div>
+            <div class="exp-card" data-aos="zoom-in"><i class="fab fa-git-alt"></i><h3>Git Training – Version Control</h3><p>EduPyramids, SINE, IIT Bombay – Passed online exam, score 93.33%. Strengthened version control best practices. Completed April 26, 2025.</p><a href="https://drive.google.com/file/d/116I18b1abCFHkz_ITQlL_ALXFmugMY-J/view?usp=drivesdk" class="cert-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Certificate</a></div>
+            <div class="exp-card" data-aos="zoom-in"><i class="fab fa-aws"></i><h3>No-code Machine Learning and Generative AI on AWS</h3><p>AWS Training & Certification – Official completion of no-code ML and GenAI on AWS. Mastered building intelligent solutions without coding using Amazon SageMaker Canvas, Bedrock, and AI services. Earned on April 15, 2026.</p><a href="https://drive.google.com/file/d/1fPQbG948qvS2srMBoThuHhrNp_M-pMMI/view?usp=drivesdk" class="cert-link" target="_blank"><i class="fas fa-external-link-alt"></i> View Certificate</a></div>
+        </div>
+    </div>
+</section>
+
+<!-- PORTFOLIO Section - Working Live Demos (after GitHub Pages deployment) -->
+<section id="portfolio">
+    <div class="container">
+        <h2 class="section-title" data-aos="fade-up">Latest <span>Projects</span></h2>
+        <div class="portfolio-grid">
+            <!-- Project 1: Mood Tracker -->
+            <div class="portfolio-item" data-aos="flip-left">
+                <div class="portfolio-img" style="background-image: url('https://picsum.photos/id/20/400/300');"></div>
+                <div class="portfolio-overlay">
+                    <h3 style="color:white; margin-bottom:5px;">Mood Tracker</h3>
+                    <a href="https://santhoshcv07.github.io/Mood-tracker/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                    <a href="https://github.com/Santhoshcv07/Mood-tracker" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </div>
+            <!-- Project 2: E-Commerce -->
+            <div class="portfolio-item" data-aos="flip-left">
+                <div class="portfolio-img" style="background-image: url('https://picsum.photos/id/26/400/300');"></div>
+                <div class="portfolio-overlay">
+                    <h3 style="color:white; margin-bottom:5px;">E‑Commerce Platform</h3>
+                    <a href="https://santhoshcv07.github.io/E-Commerce/" target="_blank" rel="noopener noreferrer">Live Demo</a>
+                    <a href="https://github.com/Santhoshcv07/E-Commerce" target="_blank" rel="noopener noreferrer">GitHub</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+
+<!-- CONTACT Section -->
+<section id="contact">
+    <div class="container contact-grid" data-aos="zoom-in">
+        <div><h3 style="font-size:2rem;">Let's <span style="color:#ff4d5a;">Connect</span></h3><p style="margin:20px 0 30px;">Currently seeking Internship and Full-Time Software Development Opportunities.</p><div class="social-icons"><a href="https://github.com/Santhoshcv07" target="_blank"><i class="fab fa-github"></i></a><a href="https://linkedin.com/in/santhosh-cv07" target="_blank"><i class="fab fa-linkedin-in"></i></a><a href="https://www.instagram.com/___.santhoshh.____?igsh=NzNrY25mMXF4MDR3&utm_source=qr" target="_blank"><i class="fab fa-instagram"></i></a><a href="https://mail.google.com/mail/?view=cm&fs=1&to=santhoshcv588@gmail.com" target="_blank"><i class="fas fa-envelope"></i></a></div></div>
+        <div><form id="contactForm"><div class="form-group" style="margin-bottom:15px;"><input type="text" placeholder="Full Name" required></div><div class="form-group" style="margin-bottom:15px;"><input type="email" placeholder="Email Address" required></div><div class="form-group" style="margin-bottom:25px;"><textarea rows="4" placeholder="YourMessage"></textarea></div><button type="submit" class="btn-primary">Send Message <i class="fas fa-paper-plane"></i></button></form></div>
+    </div>
+</section>
+<footer><p>© 2026 Santhosh CV — Full Stack Developer. All rights reserved.</p></footer>
+
+<script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+<script>
+    // script.js
+    // Initialize AOS
+    AOS.init({
+        duration: 1000,
+        once: true,
+        offset: 80,
+    });
+
+    // Mobile navbar toggle
+    const hamburger = document.getElementById('hamburger');
+    const navLinks = document.getElementById('navLinks');
+    if (hamburger) {
+        hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
+    }
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => navLinks.classList.remove('active'));
+    });
+
+    // ========== RESUME DOWNLOAD WITH PROGRESS ANIMATION ==========
+    // 📁 IMPORTANT: Place your PDF file in a folder named "resume" at the root of your project
+    // Example: /resume/Santhosh_CV.pdf
+    // Update the file name below to match your actual PDF file
+    const RESUME_FILE_PATH = "resume/Santhosh_CV.pdf";
+
+    function triggerDownloadWithProgress(buttonElement) {
+        // Prevent multiple clicks while downloading
+        if (buttonElement.classList.contains('downloading')) return;
+
+        // Create or get progress bar element
+        let progressBar = buttonElement.querySelector('.download-progress');
+        if (!progressBar) {
+            progressBar = document.createElement('span');
+            progressBar.className = 'download-progress';
+            buttonElement.style.position = 'relative';
+            buttonElement.appendChild(progressBar);
+        }
+
+        // Reset and start animation
+        buttonElement.classList.add('downloading');
+        progressBar.style.width = '0%';
+        
+        let width = 0;
+        const interval = setInterval(() => {
+            if (width >= 100) {
+                clearInterval(interval);
+                // Start actual download
+                const link = document.createElement('a');
+                link.href = RESUME_FILE_PATH;
+                link.download = RESUME_FILE_PATH.split('/').pop();
+                document.body.appendChild(link);
+                link.click();
+                document.body.removeChild(link);
+                
+                // Reset button state after a short delay
+                setTimeout(() => {
+                    progressBar.style.width = '0%';
+                    buttonElement.classList.remove('downloading');
+                }, 300);
+            } else {
+                width += 2;
+                progressBar.style.width = width + '%';
+            }
+        }, 10);
+    }
+
+    // Attach download event to both buttons
+    const downloadBtns = document.querySelectorAll('#downloadCVBtn, #cvDownloadNav');
+    downloadBtns.forEach(btn => {
+        btn.addEventListener('click', (e) => {
+            e.preventDefault();
+            triggerDownloadWithProgress(btn);
+        });
+    });
+
+    // Contact form handler
+    const form = document.getElementById('contactForm');
+    if (form) {
+        form.addEventListener('submit', (e) => {
+            e.preventDefault();
+            alert("✨ Thanks for reaching out! I'll get back within 24 hours.");
+            form.reset();
+        });
+    }
+
+    // Navbar scroll effect
+    window.addEventListener('scroll', () => {
+        const navbar = document.getElementById('navbar');
+        if (window.scrollY > 50) {
+            navbar.style.background = 'rgba(15, 17, 23, 0.95)';
+            navbar.style.backdropFilter = 'blur(16px)';
+        } else {
+            navbar.style.background = 'rgba(15, 17, 23, 0.85)';
+        }
+    });
+
+    // Add glow effect to about image frame
+    const aboutImgFrame = document.querySelector('.about-img-frame');
+    if (aboutImgFrame) aboutImgFrame.classList.add('glow-red');
+</script>
+</body>
+</html>
