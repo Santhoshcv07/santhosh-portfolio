@@ -12,6 +12,23 @@
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
     <!-- Main Stylesheet -->
     <link rel="stylesheet" href="style.css">
+    <style>
+        /* Small style update to make sure your project title looks perfect inside the overlay */
+        .portfolio-overlay h3 {
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+        .portfolio-overlay {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+    </style>
 </head>
 <body>
 
@@ -132,23 +149,25 @@
     </div>
 </section>
 
-<!-- PORTFOLIO Section - Replace # with your actual project links -->
+<!-- PORTFOLIO Section -->
 <section id="portfolio">
     <div class="container">
         <h2 class="section-title" data-aos="fade-up">Latest <span>Projects</span></h2>
         <div class="portfolio-grid">
-            <!-- Project 1 -->
+            <!-- Project 1 (Updated with Title inside the overlay) -->
             <div class="portfolio-item" data-aos="flip-left">
                 <div class="portfolio-img" style="background-image: url('https://picsum.photos/id/20/400/300');"></div>
                 <div class="portfolio-overlay">
-                    <a href="#" target="_blank">Live Demo</a>
-                    <a href="#" target="_blank">GitHub</a>
+                    <h3>ProjectManager</h3>
+                    <a href="https://project-manager-beta-ten.vercel.app/" target="_blank">Live Demo</a>
+                    <a href="https://github.com/Santhoshcv07/ProjectManager.git" target="_blank">GitHub</a>
                 </div>
             </div>
             <!-- Project 2 -->
             <div class="portfolio-item" data-aos="flip-left" data-aos-delay="100">
                 <div class="portfolio-img" style="background-image: url('https://picsum.photos/id/26/400/300');"></div>
                 <div class="portfolio-overlay">
+                    <h3>Project 2</h3>
                     <a href="#" target="_blank">Live Demo</a>
                     <a href="#" target="_blank">GitHub</a>
                 </div>
@@ -157,6 +176,7 @@
             <div class="portfolio-item" data-aos="flip-left" data-aos-delay="200">
                 <div class="portfolio-img" style="background-image: url('https://picsum.photos/id/91/400/300');"></div>
                 <div class="portfolio-overlay">
+                    <h3>Project 3</h3>
                     <a href="#" target="_blank">Live Demo</a>
                     <a href="#" target="_blank">GitHub</a>
                 </div>
@@ -165,6 +185,7 @@
             <div class="portfolio-item" data-aos="flip-left" data-aos-delay="300">
                 <div class="portfolio-img" style="background-image: url('https://picsum.photos/id/0/400/300');"></div>
                 <div class="portfolio-overlay">
+                    <h3>Project 4</h3>
                     <a href="#" target="_blank">Live Demo</a>
                     <a href="#" target="_blank">GitHub</a>
                 </div>
@@ -180,11 +201,10 @@
         <div><form id="contactForm"><div class="form-group" style="margin-bottom:15px;"><input type="text" placeholder="Full Name" required></div><div class="form-group" style="margin-bottom:15px;"><input type="email" placeholder="Email Address" required></div><div class="form-group" style="margin-bottom:25px;"><textarea rows="4" placeholder="YourMessage"></textarea></div><button type="submit" class="btn-primary">Send Message <i class="fas fa-paper-plane"></i></button></form></div>
     </div>
 </section>
-<footer><p>© 2026 Santhosh CV — Full Stack Developer. All rights reserved.</p></footer>
+<footer><p>©️ 2026 Santhosh CV — Full Stack Developer. All rights reserved.</p></footer>
 
 <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
 <script>
-    // script.js
     // Initialize AOS
     AOS.init({
         duration: 1000,
@@ -203,16 +223,11 @@
     });
 
     // ========== RESUME DOWNLOAD WITH PROGRESS ANIMATION ==========
-    // 📁 IMPORTANT: Place your PDF file in a folder named "resume" at the root of your project
-    // Example: /resume/Santhosh_CV.pdf
-    // Update the file name below to match your actual PDF file
     const RESUME_FILE_PATH = "resume/Santhosh_CV.pdf";
 
     function triggerDownloadWithProgress(buttonElement) {
-        // Prevent multiple clicks while downloading
         if (buttonElement.classList.contains('downloading')) return;
 
-        // Create or get progress bar element
         let progressBar = buttonElement.querySelector('.download-progress');
         if (!progressBar) {
             progressBar = document.createElement('span');
@@ -221,7 +236,6 @@
             buttonElement.appendChild(progressBar);
         }
 
-        // Reset and start animation
         buttonElement.classList.add('downloading');
         progressBar.style.width = '0%';
         
@@ -229,7 +243,6 @@
         const interval = setInterval(() => {
             if (width >= 100) {
                 clearInterval(interval);
-                // Start actual download
                 const link = document.createElement('a');
                 link.href = RESUME_FILE_PATH;
                 link.download = RESUME_FILE_PATH.split('/').pop();
@@ -237,7 +250,6 @@
                 link.click();
                 document.body.removeChild(link);
                 
-                // Reset button state after a short delay
                 setTimeout(() => {
                     progressBar.style.width = '0%';
                     buttonElement.classList.remove('downloading');
@@ -249,7 +261,6 @@
         }, 10);
     }
 
-    // Attach download event to both buttons
     const downloadBtns = document.querySelectorAll('#downloadCVBtn, #cvDownloadNav');
     downloadBtns.forEach(btn => {
         btn.addEventListener('click', (e) => {
