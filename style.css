@@ -482,6 +482,34 @@ section {
     margin: 0;
 }
 
+.project-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 3rem;
+}
+
+.project-header .section-title {
+    margin-bottom: 0;
+}
+
+.view-all-btn {
+    font-family: 'Playfair Display', serif;
+    font-size: 1.5rem;
+    font-weight: 700;
+    color: var(--accent);
+    text-decoration: none;
+    transition: 0.3s;
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.view-all-btn:hover {
+    color: var(--accent-hover);
+    transform: translateX(5px);
+}
+
 .portfolio-grid {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
@@ -596,6 +624,11 @@ footer {
 }
 
 @media (max-width: 992px) {
+    .project-header {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 15px;
+    }
     .hero-grid, .about-grid, .edu-skills-wrapper, .contact-grid {
         grid-template-columns: 1fr;
     }

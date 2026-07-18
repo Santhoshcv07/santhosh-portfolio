@@ -1,0 +1,819 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+    <title>Santhosh CV | Full Stack Developer & Engineering Student</title>
+    <!-- Google Fonts: Playfair Display + Poppins -->
+    <link
+        href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;500;600;700;800;900&family=Poppins:wght@300;400;500;600;700;800&display=swap"
+        rel="stylesheet">
+    <!-- Font Awesome 6 (free icons) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <!-- AOS Library (Animate On Scroll) -->
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+    <!-- Main Stylesheet -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        /* Portfolio Overlay Typography */
+        .portfolio-overlay h3 {
+            color: #ffffff;
+            font-family: 'Poppins', sans-serif;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 15px;
+            text-align: center;
+        }
+
+        .portfolio-overlay {
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+        }
+
+        /* Updated Buttons Container inside Overlay */
+        .port-buttons {
+            display: flex;
+            gap: 10px;
+            margin-bottom: 10px;
+        }
+
+        .portfolio-overlay a {
+            padding: 8px 15px;
+            font-size: 0.9rem;
+            text-decoration: none;
+            color: #fff;
+            background: rgba(255, 255, 255, 0.2);
+            border-radius: 5px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .portfolio-overlay a:hover {
+            background: #ff4d5a;
+        }
+
+        /* 'More Info' Button Specifics */
+        .btn-more-info {
+            width: 70%;
+            text-align: center;
+            background: transparent !important;
+            border: 1px solid #fff;
+        }
+
+        .btn-more-info:hover {
+            background: #ff4d5a !important;
+            border-color: #ff4d5a !important;
+        }
+
+        /* ========== MODAL (POPUP) STYLES ========== */
+        .modal-overlay {
+            display: none;
+            /* Hidden by default */
+            position: fixed;
+            z-index: 9999;
+            /* Sit on top of everything */
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(10, 10, 15, 0.85);
+            backdrop-filter: blur(8px);
+            opacity: 0;
+            transition: opacity 0.3s ease;
+        }
+
+        .modal-overlay.show {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 1;
+        }
+
+        .modal-content {
+            background-color: #1a1d24;
+            color: #e2e8f0;
+            padding: 30px;
+            border-radius: 12px;
+            width: 90%;
+            max-width: 650px;
+            max-height: 85vh;
+            overflow-y: auto;
+            position: relative;
+            transform: translateY(-30px);
+            transition: transform 0.3s ease;
+            border: 1px solid rgba(255, 77, 90, 0.3);
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+            font-family: 'Poppins', sans-serif;
+        }
+
+        .modal-overlay.show .modal-content {
+            transform: translateY(0);
+        }
+
+        .close-modal {
+            position: absolute;
+            top: 15px;
+            right: 20px;
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            cursor: pointer;
+            transition: 0.2s;
+        }
+
+        .close-modal:hover {
+            color: #ff4d5a;
+        }
+
+        .modal-content h2 {
+            color: #fff;
+            margin-bottom: 10px;
+            font-family: 'Playfair Display', serif;
+        }
+
+        .modal-content h4 {
+            color: #ff4d5a;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 1.1rem;
+        }
+
+        .modal-content p,
+        .modal-content ul {
+            font-size: 0.95rem;
+            line-height: 1.6;
+            color: #cbd5e1;
+        }
+
+        .modal-content ul {
+            padding-left: 20px;
+            margin-bottom: 15px;
+        }
+
+        .modal-content ul li {
+            margin-bottom: 8px;
+        }
+
+        .modal-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .tech-tag {
+            display: inline-block;
+            background: rgba(255, 77, 90, 0.1);
+            color: #ff4d5a;
+            padding: 5px 12px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            margin-right: 8px;
+            margin-bottom: 8px;
+            border: 1px solid rgba(255, 77, 90, 0.3);
+        }
+
+        /* Custom Scrollbar for Modal */
+        .modal-content::-webkit-scrollbar {
+            width: 8px;
+        }
+
+        .modal-content::-webkit-scrollbar-track {
+            background: #1a1d24;
+        }
+
+        .modal-content::-webkit-scrollbar-thumb {
+            background: #ff4d5a;
+            border-radius: 4px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <!-- NAVBAR -->
+    <nav class="navbar" id="navbar">
+        <div class="nav-container">
+            <div class="logo">Santhosh CV</div>
+            <div class="hamburger" id="hamburger"><i class="fas fa-bars"></i></div>
+            <div class="nav-links" id="navLinks">
+                <a href="index.html#home">Home</a>
+                <a href="index.html#about">About</a>
+                <a href="index.html#experience">Certificates</a>
+                <a href="#portfolio">Projects</a>
+                <a href="index.html#contact">Contact</a>
+                <a href="#" class="download-cv-btn" id="cvDownloadNav"><i class="fas fa-download"></i> Download
+                    Resume</a>
+            </div>
+        </div>
+    </nav>
+
+    <!-- PORTFOLIO Section -->
+    <section id="portfolio">
+        <div class="container">
+            <div class="project-header">
+                <h2 class="section-title" data-aos="fade-up">Latest <span>Projects</span></h2>
+                <a href="index.html" class="view-all-btn">
+                    <i class="fas fa-arrow-left"></i> Back
+                </a>
+            </div>
+            <div class="portfolio-grid">
+                <!-- Project 1 -->
+                <div class="portfolio-item" data-aos="flip-left">
+                    <div class="portfolio-img" style="background-image:url('images/vibesync_ai.png');">
+                    </div>
+
+                    <div class="portfolio-overlay">
+                        <h3>VibeSync AI</h3>
+                        <div class="port-buttons">
+                            <a href="https://vibe-sync-ai-xi.vercel.app/" target="_blank">Live Demo</a>
+                            <a href="https://github.com/Santhoshcv07/VibeSync_AI.git" target="_blank">GitHub</a>
+                        </div>
+                        <a class="btn-more-info" onclick="openModal('modal1')">
+                            More Info
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 2 -->
+                <div class="portfolio-item" data-aos="flip-left" data-aos-delay="100">
+                    <div class="portfolio-img" style="background-image:url('images/Devpilot_AI.png');">
+                    </div>
+
+                    <div class="portfolio-overlay">
+                        <h3>DevPilot AI</h3>
+                        <div class="port-buttons">
+                            <a href="https://dev-pilot-ai-hazel.vercel.app/" target="_blank">Live Demo</a>
+                            <a href="https://github.com/Santhoshcv07/DevPilot_AI.git" target="_blank">GitHub</a>
+                        </div>
+                        <a class="btn-more-info" onclick="openModal('modal2')">
+                            More Info
+                        </a>
+                    </div>
+                </div>
+
+                <!-- Project 3 -->
+                <div class="portfolio-item" data-aos="flip-left" data-aos-delay="200">
+                    <div class="portfolio-img" style="background-image: url('images/Ai\ content\ creator.png');"></div>
+                    <div class="portfolio-overlay">
+                        <h3>AI Content Creator</h3>
+                        <div class="port-buttons">
+                            <a href="https://ai-content-creator-swart.vercel.app/" target="_blank">Live Demo</a>
+                            <a href="https://github.com/Santhoshcv07/AI-Content-Creator.git" target="_blank">GitHub</a>
+                        </div>
+                        <a class="btn-more-info" onclick="openModal('modal3')">More Info</a>
+                    </div>
+                </div>
+
+                <!-- Project 4 -->
+                <div class="portfolio-item" data-aos="flip-left" data-aos-delay="300">
+                    <div class="portfolio-img" style="background-image: url('images/MockMate\ AI.png');"></div>
+                    <div class="portfolio-overlay">
+                        <h3>MockMate AI</h3>
+                        <div class="port-buttons">
+                            <a href="https://mock-mate-ai-tau-two.vercel.app/" target="_blank">Live Demo</a>
+                            <a href="https://github.com/Santhoshcv07/MockMate-AI.git" target="_blank">GitHub</a>
+                        </div>
+                        <a class="btn-more-info" onclick="openModal('modal4')">More Info</a>
+                    </div>
+                </div>
+
+
+                <!-- Project 5 -->
+                <div class="portfolio-item" data-aos="flip-left" data-aos-delay="400">
+                    <div class="portfolio-img" style="background-image: url('images/food-orbit.png');"></div>
+                    <div class="portfolio-overlay">
+                        <h3>Food Orbit</h3>
+                        <div class="port-buttons">
+                            <a href="https://food-orbit.vercel.app/" target="_blank">Live Demo</a>
+                            <a href="https://github.com/Santhoshcv07/Food-Orbit.git" target="_blank">GitHub</a>
+                        </div>
+                        <a class="btn-more-info" onclick="openModal('modal5')">More Info</a>
+                    </div>
+                </div>
+                <!-- Project 6 -->
+                <div class="portfolio-item" data-aos="flip-left" data-aos-delay="500">
+                    <div class="portfolio-img" style="background-image: url('images/HighwayCrash.png');"></div>
+                    <div class="portfolio-overlay">
+                        <h3>HighwayCrash Game</h3>
+                        <div class="port-buttons">
+                            <a href="https://santhu771.itch.io/highway-crash-game" target="_blank">Live Demo</a>
+                            <a href="https://github.com/Santhoshcv07/Highway-Crash-Game.git" target="_blank">GitHub</a>
+                        </div>
+                        <a class="btn-more-info" onclick="openModal('modal6')">More Info</a>
+                    </div>
+                </div>
+
+
+                <!-- Project 7 -->
+                <div class="portfolio-item" data-aos="flip-left" data-aos-delay="600">
+                    <div class="portfolio-img" style="background-image: url('images/smart\ expense.png');"></div>
+                    <div class="portfolio-overlay">
+                        <h3>smart-budget-tracker</h3>
+                        <div class="port-buttons">
+                            <a href="https://smart-budget-tracker-two.vercel.app/" target="_blank">Live Demo</a>
+                            <a href="https://github.com/Santhoshcv07/smart-budget-tracker.git"
+                                target="_blank">GitHub</a>
+                        </div>
+                        <a class="btn-more-info" onclick="openModal('modal7')">More Info</a>
+                    </div>
+                </div>
+
+                <!-- Project 8 -->
+                <div class="portfolio-item" data-aos="flip-left" data-aos-delay="700">
+                    <div class="portfolio-img" style="background-image: url('images/project\ mangaer.png');"></div>
+                    <div class="portfolio-overlay">
+                        <h3>ProjectManager</h3>
+                        <div class="port-buttons">
+                            <a href="https://project-manager-beta-ten.vercel.app/" target="_blank">Live Demo</a>
+                            <a href="https://github.com/Santhoshcv07/ProjectManager.git" target="_blank">GitHub</a>
+                        </div>
+                        <!-- The onclick event triggers the modal below -->
+                        <a class="btn-more-info" onclick="openModal('modal8')">More Info</a>
+                    </div>
+                </div>
+            </div>
+
+
+            <footer>
+                <p>©️ 2026 Santhosh CV — Full Stack Developer. All rights reserved.</p>
+            </footer>
+
+
+            <!-- ========================================== -->
+            <!-- PROJECT MODALS (POPUPS) CONTENT            -->
+            <!-- Edit the text below to match your projects -->
+            <!-- ========================================== -->
+
+            <!-- Modal 1: VibeSync_AI -->
+            <div id="modal1" class="modal-overlay" onclick="closeModalOutside(event, 'modal1')">
+                <div class="modal-content">
+                    <span class="close-modal" onclick="closeModal('modal1')">&times;</span>
+                    <h2>VibeSync_AI</h2>
+                    <img src="images/vibesyncai_background.png" alt="VibeSync_AI" class="modal-image">
+                    <p>An AI-powered entertainment discovery platform designed to curate personalized experiences
+                        tailored exactly to your mood. VibeSync AI creates comprehensive "Vibe sessions" by analyzing a
+                        user's current mood, activity, available time, energy level, and preferences. I built this
+                        application to solve the paradox of choice in entertainment by delivering highly targeted music,
+                        YouTube videos, visual moodboards, movies, and book recommendations that perfectly fit the
+                        moment.</p>
+                    <h4>Key Features</h4>
+                    <ul>
+                        <li>Personalized Vibe Generation that creates tailored entertainment sessions by analyzing
+                            real-time mood, activity, and energy levels.</li>
+                        <li>Multi-Format Recommendations offering a seamless curation of music, YouTube videos, movies,
+                            and visual moodboards in one unified experience.</li>
+                        <li>Time-Aware Suggestions ensuring that movie and video recommendations fit perfectly within
+                            the user's specific available time window.</li>
+                        <li>Smart Feedback System that learns from user preferences and interactions to continuously
+                            improve and refine future entertainment suggestions.</li>
+                        <li>Robust Modern Architecture built on a scalable FastAPI backend with a dynamic Next.js
+                            frontend, utilizing provider-independent LLM integrations.</li>
+                    </ul>
+                    <h4>Tech Stack Used</h4>
+                    <div>
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Tailwind CSS</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">LLMs</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal 2: DevPilot_AI -->
+            <div id="modal2" class="modal-overlay" onclick="closeModalOutside(event, 'modal2')">
+                <div class="modal-content">
+                    <span class="close-modal" onclick="closeModal('modal2')">&times;</span>
+                    <h2>DevPilot_AI</h2>
+                    <img src="images/devpilotai_background.png" alt="DevPilot_AI" class="modal-image">
+                    <p>An advanced, AI-powered developer assistant designed to bridge the gap between large codebases
+                        and natural language understanding. By integrating seamlessly with your local file system,
+                        DevPilot AI allows you to query your code, ask for architectural explanations, and even write
+                        files directly from the chat interface. I built this platform to supercharge developer workflows
+                        with an intelligent assistant that features a blazingly fast FastAPI backend and a stunning,
+                        highly animated Next.js frontend.</p>
+                    <h4>Key Features</h4>
+                    <ul>
+                        <li>AI-Powered Chat conversing with advanced LLMs (powered by Groq) to understand complex code
+                            structures, debug issues, and generate new code.</li>
+                        <li>Deep Workspace Integration allowing you to directly select local folders and have DevPilot
+                            scan, read, and understand your entire file tree.</li>
+                        <li>In-App Code Editor featuring an integrated Monaco Editor to review and edit files seamlessly
+                            within the platform.</li>
+                        <li>Secure Authentication leveraging robust JWT-based user authentication and secure password
+                            hashing using bcrypt.</li>
+                        <li>Stunning UI/UX with a beautifully designed interface utilizing Tailwind CSS and smooth
+                            micro-animations via Framer Motion.</li>
+                        <li>High Performance Architecture pairing an asynchronous Python backend (FastAPI) with a
+                            responsive Next.js frontend for an optimal experience.</li>
+                    </ul>
+                    <h4>Tech Stack Used</h4>
+                    <div>
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Tailwind CSS</span>
+                        <span class="tech-tag">Framer Motion</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Groq API</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal 3 -->
+            <div id="modal3" class="modal-overlay" onclick="closeModalOutside(event, 'modal3')">
+                <div class="modal-content">
+                    <span class="close-modal" onclick="closeModal('modal3')">&times;</span>
+                    <h2>AI Content Creator</h2>
+                    <img src="images/ai-content-creator-background.png" alt="Project 3 Demo" class="modal-image">
+                    <p>A full-stack SaaS platform designed to help marketers, writers, and digital creators generate
+                        high-quality text instantly. I built this application to solve the problem of "writer's block"
+                        and time-consuming drafting by offering an intuitive, AI-driven workspace. It features a custom
+                        analytics dashboard to help users track their productivity, streaks, and template usage over
+                        time.</p>
+                    <h4>Key Features</h4>
+                    <ul>
+                        <li>Advanced AI Content Generation leveraging the Google Gemini API for custom prompts and
+                            reusable templates.</li>
+                        <li>Secure User Authentication using Supabase and Google OAuth for seamless login and session
+                            management..</li>
+                        <li>Interactive Performance Analytics with visual data tracking for user generation volume,
+                            streaks, and workspace usage.</li>
+                        <li>Comprehensive Content History with view, search, and management functionality for all past
+                            AI generations.</li>
+                        <li>Modern Responsive UI featuring adaptive dark/light modes, glassmorphism design, and Framer
+                            Motion spring animations.</li>
+                    </ul>
+                    <h4>Tech Stack Used</h4>
+                    <div>
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">Tailwind CSS</span>
+                        <span class="tech-tag">Supabase</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Gemini</span>
+                        <span class="tech-tag">Vercel</span>
+
+
+
+
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal 4 -->
+            <div id="modal4" class="modal-overlay" onclick="closeModalOutside(event, 'modal4')">
+                <div class="modal-content">
+                    <span class="close-modal" onclick="closeModal('modal4')">&times;</span>
+                    <h2>MockMate AI</h2>
+                    <img src="images/mockmate-background.png" alt="Project 4 Demo" class="modal-image">
+                    <p>A full-stack AI-powered interview preparation platform designed to help students, job seekers,
+                        and professionals build confidence and improve their interview performance. MockMate AI
+                        simulates realistic technical and HR interviews using conversational AI, analyzes user
+                        responses, and provides detailed performance insights to accelerate career readiness.
+
+                        I built this application to solve the challenge of limited interview practice opportunities by
+                        creating an intelligent AI recruiter that conducts personalized mock interviews, evaluates
+                        communication and technical skills, identifies recurring weaknesses, and provides actionable
+                        improvement recommendations.</p>
+                    <h4>Key Features</h4>
+                    <ul>
+                        <li>Resume-Aware AI Interviews that dynamically generate interview questions based on the user's
+                            uploaded resume and skill set.</li>
+                        <li>AI Follow-Up Interview Mode enabling natural conversational interviews where subsequent
+                            questions adapt to previous answers for a realistic recruiter experience.</li>
+                        <li>Voice-Based Interview Support with speech recognition for hands-free interview practice and
+                            real-time interaction.</li>
+                        <li>Comprehensive AI Evaluation System providing Overall Score, Technical Score, Communication
+                            Score, strengths, weaknesses, and personalized recommendations.</li>
+                        <li>Advanced Analytics Dashboard featuring performance trends, skill radar charts, recurring
+                            weakness analysis, interview history, and readiness tracking.</li>
+                        <li>Interview Report Management allowing users to review past interviews, detailed feedback
+                            reports, and performance progression over time.</li>
+                        <li>Secure Authentication & Data Storage powered by Supabase Authentication and PostgreSQL for
+                            reliable user management and persistence.</li>
+                    </ul>
+                    <h4>Tech Stack Used</h4>
+                    <div>
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Tailwind CSS</span>
+                        <span class="tech-tag">Framer Motion</span>
+                        <span class="tech-tag">Supabase</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal 5: FoodOrbit -->
+            <div id="modal5" class="modal-overlay" onclick="closeModalOutside(event, 'modal5')">
+                <div class="modal-content">
+                    <span class="close-modal" onclick="closeModal('modal5')">&times;</span>
+
+                    <h2>FoodOrbit: Three-Tier Food Rescue Network</h2>
+
+                    <img src="images/foodorbit-backgroun.png" alt="FoodOrbit Dashboard and Map" class="modal-image">
+
+                    <p>
+                        A full-stack logistics and sustainability platform designed to systematically eliminate event
+                        food waste by redirecting surplus food through three prioritized stages: human consumption,
+                        animal feed, and composting. FoodOrbit automates the redistribution process using time-sensitive
+                        tier escalation and interactive geolocation mapping. I built this application to solve the
+                        inefficiencies in traditional food rescue by creating an autonomous real-time network that
+                        connects event organizers directly with NGOs, agricultural farmers, and bio-waste agencies,
+                        ensuring zero edible food ends up in methane-producing landfills.
+                    </p>
+
+                    <h4>Key Features</h4>
+                    <ul>
+                        <li><strong>Autonomous Three-Tier Escalation</strong> that automatically shifts unclaimed food
+                            from Tier 1 (Human Consumption) to Tier 2 (Animal Feed) and Tier 3 (Composting) based on
+                            expiry timers and expanding notification radii.</li>
+                        <li><strong>Interactive Geolocation Mapping</strong> built with Leaflet.js to visualize live
+                            surplus batches, display exact pickup coordinates, and render 5km, 10km, and 15km
+                            operational priority boundaries.</li>
+                        <li><strong>Real-Time Cloud Synchronization</strong> powered by Firebase Firestore WebSockets
+                            (onSnapshot) to instantly update live hub availability and secure claim states across all
+                            connected browsers without page refreshes.</li>
+                        <li><strong>Role-Based Access Control (RBAC)</strong> utilizing Firebase Authentication to
+                            enforce strict workflow rules, ensuring stakeholders can only view and claim surplus within
+                            their officially authorized tier.</li>
+                        <li><strong>AI Sustainability Advisor</strong> integrated with Groq's Llama 3.3 LLM via secure
+                            Next.js backend routes to analyze live dashboard telemetry and generate real-time
+                            environmental impact reports.</li>
+                        <li><strong>Personalized Impact Analytics</strong> dynamically calculating and displaying
+                            role-specific metrics such as landfill methane diverted, agricultural feed savings, and
+                            estimated tax receipt values.</li>
+                    </ul>
+
+                    <h4>Tech Stack Used</h4>
+                    <div class="flex flex-wrap gap-2 mt-2">
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Tailwind CSS</span>
+                        <span class="tech-tag">Firebase Auth</span>
+                        <span class="tech-tag">Cloud Firestore</span>
+                        <span class="tech-tag">Groq AI (Llama 3)</span>
+                        <span class="tech-tag">Leaflet.js</span>
+                        <span class="tech-tag">Vercel</span>
+                    </div>
+                </div>
+            </div>
+            <!-- Modal 6: HighwayCrash Game -->
+            <div id="modal6" class="modal-overlay" onclick="closeModalOutside(event, 'modal6')">
+                <div class="modal-content">
+                    <span class="close-modal" onclick="closeModal('modal6')">&times;</span>
+
+                    <h2>Highway Crash Game</h2>
+
+                    <img src="images/HighwayCrash_background.png" alt="Highway Crash Game" class="modal-image">
+
+                    <p>
+                        Highway Crash is a 3D endless driving game developed in Unity where players navigate through
+                        highway traffic while avoiding collisions and achieving the highest possible score. I built the
+                        complete gameplay system including vehicle controls, traffic spawning, scoring, UI, camera
+                        system, and game-over mechanics using C#.
+                    </p>
+
+                    <h4>Key Features</h4>
+                    <ul>
+                        <li><strong>Realistic Car Controls:</strong> Smooth acceleration, braking, steering, and
+                            responsive vehicle physics.</li>
+
+                        <li><strong>Dynamic Traffic System:</strong> AI vehicles spawn continuously with randomized
+                            lanes and timing to create challenging gameplay.</li>
+
+                        <li><strong>Score & Distance Tracking:</strong> Live speed, distance traveled, and score are
+                            displayed throughout the game.</li>
+
+                        <li><strong>Collision Detection:</strong> The game ends instantly when the player crashes into
+                            another vehicle.</li>
+
+                        <li><strong>Smooth Follow Camera:</strong> Third-person camera follows the player's car with
+                            smooth movement.</li>
+
+                        <li><strong>Multiple Playable Vehicles:</strong> Different vehicle models can be selected before
+                            starting the game.</li>
+                    </ul>
+
+                    <h4>Tech Stack Used</h4>
+                    <div class="flex flex-wrap gap-2 mt-2">
+                        <span class="tech-tag">Unity</span>
+                        <span class="tech-tag">C#</span>
+                        <span class="tech-tag">Visual Studio Code</span>
+                        <span class="tech-tag">Git</span>
+                        <span class="tech-tag">GitHub</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- Modal 7: smart-budget-tracker -->
+            <div id="modal7" class="modal-overlay" onclick="closeModalOutside(event, 'modal7')">
+                <div class="modal-content">
+                    <span class="close-modal" onclick="closeModal('modal7')">&times;</span>
+                    <h2>smart-budget-tracker</h2>
+                    <img src="images/smart-budget-tracker-background.png" alt="Project 2 Demo" class="modal-image">
+                    <p>The Smart Budget Tracker is a modern, responsive, full-stack personal finance application
+                        designed to help individuals monitor their expenses, manage monthly allowances, and analyze
+                        spending habits securely. Featuring a clean visual interface with glassmorphic elements, the
+                        application enforces individual user security via token-based sessions and provides automated
+                        local data visualization to track remaining balances dynamically.</p>
+                    <h4>Key Features</h4>
+                    <ul>
+                        <li>Secure User Authentication using JWT-based login and registration.</li>
+                        <li>Complete Expense Management with add, edit, delete, and transaction tracking functionality.
+                        </li>
+                        <li>Dynamic Budget Allocation with visual spending indicators and alert thresholds.</li>
+                        <li>Automated Database Synchronization and table generation on application startup.</li>
+                        <li>Timeframe Filtering and Interactive Analytics for monthly expense insights.</li>
+                        <li>Modern Responsive UI with custom styling, calendar inputs, and adaptive layouts.</li>
+                    </ul>
+                    <h4>Tech Stack Used</h4>
+                    <div>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">JWT</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">React.js</span>
+                        <span class="tech-tag">Express.js</span>
+                        <span class="tech-tag">Recharts</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Modal 8: ProjectManager -->
+            <div id="modal8" class="modal-overlay" onclick="closeModalOutside(event, 'modal8')">
+                <div class="modal-content">
+                    <span class="close-modal" onclick="closeModal('modal8')">&times;</span>
+                    <h2>ProjectManager</h2>
+                    <img src="images/projectmanager_background.png" alt="ProjectManager Demo" class="modal-image">
+
+                    <p>Project Flow is a secure, full-stack project management application designed to streamline
+                        workflows and track daily tasks efficiently. Built with a modern React frontend and a robust
+                        Node.js backend, the platform allows users to create accounts, manage their project data, and
+                        securely interact with a cloud-based database. It emphasizes a clean, responsive user experience
+                        and reliable RESTful API architecture.</p>
+
+                    <h4>Key Features</h4>
+                    <ul>
+                        <li>Secure user registration and login system protected using JWT authentication and encrypted
+                            credentials.</li>
+                        <li>Seamless CRUD (Create, Read, Update, Delete) operations connected dynamically to MongoDB
+                            Atlas cloud database.</li>
+                        <li>Modern and fully responsive dashboard interface built with React and Vite for smooth
+                            performance across desktop, tablet, and mobile devices.</li>
+                        <li>Custom RESTful API architecture powered by Express.js ensuring secure and efficient
+                            communication between frontend and backend services</li>
+                        <li>* Secure handling of database connection strings, API keys, and sensitive credentials
+                            through environment variables.</li>
+                    </ul>
+
+                    <h4>Tech Stack Used</h4>
+                    <div>
+                        <span class="tech-tag">MongoDB</span>
+                        <span class="tech-tag">Express.js</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">Node.js</span>
+                        <span class="tech-tag">JWT</span>
+                    </div>
+                </div>
+            </div>
+
+
+            <!-- SCRIPTS -->
+            <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+            <script>
+                // Initialize AOS
+                AOS.init({
+                    duration: 1000,
+                    once: true,
+                    offset: 80,
+                });
+
+                // Mobile navbar toggle
+                const hamburger = document.getElementById('hamburger');
+                const navLinks = document.getElementById('navLinks');
+                if (hamburger) {
+                    hamburger.addEventListener('click', () => navLinks.classList.toggle('active'));
+                }
+                document.querySelectorAll('.nav-links a').forEach(link => {
+                    link.addEventListener('click', () => navLinks.classList.remove('active'));
+                });
+
+                // ========== MODAL (POPUP) LOGIC ==========
+                // Open the modal
+                function openModal(modalId) {
+                    const modal = document.getElementById(modalId);
+                    modal.style.display = 'flex';
+                    // Tiny timeout ensures the CSS transition runs smoothly
+                    setTimeout(() => {
+                        modal.classList.add('show');
+                    }, 10);
+                    // Prevent body scrolling when modal is open
+                    document.body.style.overflow = 'hidden';
+                }
+
+                // Close the modal via the "X" button
+                function closeModal(modalId) {
+                    const modal = document.getElementById(modalId);
+                    modal.classList.remove('show');
+                    setTimeout(() => {
+                        modal.style.display = 'none';
+                    }, 300); // Wait for the fade-out animation to finish
+                    // Restore body scrolling
+                    document.body.style.overflow = 'auto';
+                }
+
+                // Close the modal if user clicks outside the content box
+                function closeModalOutside(event, modalId) {
+                    if (event.target.id === modalId) {
+                        closeModal(modalId);
+                    }
+                }
+
+
+                // ========== RESUME DOWNLOAD WITH PROGRESS ANIMATION ==========
+                const RESUME_FILE_PATH = "resume/Santhosh_CV.pdf";
+
+                function triggerDownloadWithProgress(buttonElement) {
+                    if (buttonElement.classList.contains('downloading')) return;
+
+                    let progressBar = buttonElement.querySelector('.download-progress');
+                    if (!progressBar) {
+                        progressBar = document.createElement('span');
+                        progressBar.className = 'download-progress';
+                        buttonElement.style.position = 'relative';
+                        buttonElement.appendChild(progressBar);
+                    }
+
+                    buttonElement.classList.add('downloading');
+                    progressBar.style.width = '0%';
+
+                    let width = 0;
+                    const interval = setInterval(() => {
+                        if (width >= 100) {
+                            clearInterval(interval);
+                            const link = document.createElement('a');
+                            link.href = RESUME_FILE_PATH;
+                            link.download = RESUME_FILE_PATH.split('/').pop();
+                            document.body.appendChild(link);
+                            link.click();
+                            document.body.removeChild(link);
+
+                            setTimeout(() => {
+                                progressBar.style.width = '0%';
+                                buttonElement.classList.remove('downloading');
+                            }, 300);
+                        } else {
+                            width += 2;
+                            progressBar.style.width = width + '%';
+                        }
+                    }, 10);
+                }
+
+                const downloadBtns = document.querySelectorAll('#downloadCVBtn, #cvDownloadNav');
+                downloadBtns.forEach(btn => {
+                    btn.addEventListener('click', (e) => {
+                        e.preventDefault();
+                        triggerDownloadWithProgress(btn);
+                    });
+                });
+
+                // Contact form handler
+                const form = document.getElementById('contactForm');
+                if (form) {
+                    form.addEventListener('submit', (e) => {
+                        e.preventDefault();
+                        alert("✨ Thanks for reaching out! I'll get back within 24 hours.");
+                        form.reset();
+                    });
+                }
+
+                // Navbar scroll effect
+                window.addEventListener('scroll', () => {
+                    const navbar = document.getElementById('navbar');
+                    if (window.scrollY > 50) {
+                        navbar.style.background = 'rgba(15, 17, 23, 0.95)';
+                        navbar.style.backdropFilter = 'blur(16px)';
+                    } else {
+                        navbar.style.background = 'rgba(15, 17, 23, 0.85)';
+                    }
+                });
+
+                // Add glow effect to about image frame
+                const aboutImgFrame = document.querySelector('.about-img-frame');
+                if (aboutImgFrame) aboutImgFrame.classList.add('glow-red');
+            </script>
+</body>
+
+</html>

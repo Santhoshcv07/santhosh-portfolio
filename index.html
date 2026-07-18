@@ -284,7 +284,12 @@
 <!-- PORTFOLIO Section -->
 <section id="portfolio">
     <div class="container">
-        <h2 class="section-title" data-aos="fade-up">Latest <span>Projects</span></h2>
+        <div class="project-header">
+            <h2 class="section-title" data-aos="fade-up">Latest <span>Projects</span></h2>
+            <a href="projects.html" class="view-all-btn">
+                View All <i class="fas fa-arrow-right"></i>
+            </a>
+        </div>
         <div class="portfolio-grid">
             <!-- Project 1 -->
             <div class="portfolio-item" data-aos="flip-left">
@@ -326,45 +331,6 @@
                 </div>
             </div>
             
-            <!-- Project 4 -->
-            <div class="portfolio-item" data-aos="flip-left" data-aos-delay="300">
-                <div class="portfolio-img" style="background-image: url('images/MockMate\ AI.png');"></div>
-                <div class="portfolio-overlay">
-                    <h3>MockMate AI</h3>
-                    <div class="port-buttons">
-                        <a href="https://mock-mate-ai-tau-two.vercel.app/" target="_blank">Live Demo</a>
-                        <a href="https://github.com/Santhoshcv07/MockMate-AI.git" target="_blank">GitHub</a>
-                    </div>
-                    <a class="btn-more-info" onclick="openModal('modal4')">More Info</a>
-                </div>
-            </div>
-        
-    
-       <!-- Project 5 -->
-    <div class="portfolio-item" data-aos="flip-left" data-aos-delay="400">
-        <div class="portfolio-img" style="background-image: url('images/food-orbit.png');"></div>
-        <div class="portfolio-overlay">
-            <h3>Food Orbit</h3>
-            <div class="port-buttons">
-                <a href="https://food-orbit.vercel.app/" target="_blank">Live Demo</a>
-                <a href="https://github.com/Santhoshcv07/Food-Orbit.git" target="_blank">GitHub</a>
-            </div>
-            <a class="btn-more-info" onclick="openModal('modal5')">More Info</a>
-        </div>
-    </div>
-    <!-- Project 6 -->
-    <div class="portfolio-item" data-aos="flip-left" data-aos-delay="500">
-                <div class="portfolio-img" style="background-image: url('images/HighwayCrash.png');"></div>
-                <div class="portfolio-overlay">
-                    <h3>HighwayCrash Game</h3>
-                    <div class="port-buttons">
-                        <a href="https://santhu771.itch.io/highway-crash-game" target="_blank">Live Demo</a>
-                        <a href="https://github.com/Santhoshcv07/Highway-Crash-Game.git" target="_blank">GitHub</a>
-                    </div>
-                    <a class="btn-more-info" onclick="openModal('modal6')">More Info</a>
-                </div>
-            </div>
-
 </div>
             
 
@@ -467,116 +433,6 @@
 
             
 
-        </div>
-    </div>
-</div>
-
-<!-- Modal 4 -->
-<div id="modal4" class="modal-overlay" onclick="closeModalOutside(event, 'modal4')">
-    <div class="modal-content">
-        <span class="close-modal" onclick="closeModal('modal4')">&times;</span>
-        <h2>MockMate AI</h2>
-        <img src="images/mockmate-background.png" alt="Project 4 Demo" class="modal-image">
-        <p>A full-stack AI-powered interview preparation platform designed to help students, job seekers, and professionals build confidence and improve their interview performance. MockMate AI simulates realistic technical and HR interviews using conversational AI, analyzes user responses, and provides detailed performance insights to accelerate career readiness.
-
-I built this application to solve the challenge of limited interview practice opportunities by creating an intelligent AI recruiter that conducts personalized mock interviews, evaluates communication and technical skills, identifies recurring weaknesses, and provides actionable improvement recommendations.</p>
-        <h4>Key Features</h4>
-        <ul>
-            <li>Resume-Aware AI Interviews that dynamically generate interview questions based on the user's uploaded resume and skill set.</li>
-            <li>AI Follow-Up Interview Mode enabling natural conversational interviews where subsequent questions adapt to previous answers for a realistic recruiter experience.</li>
-            <li>Voice-Based Interview Support with speech recognition for hands-free interview practice and real-time interaction.</li>
-            <li>Comprehensive AI Evaluation System providing Overall Score, Technical Score, Communication Score, strengths, weaknesses, and personalized recommendations.</li>
-            <li>Advanced Analytics Dashboard featuring performance trends, skill radar charts, recurring weakness analysis, interview history, and readiness tracking.</li>
-            <li>Interview Report Management allowing users to review past interviews, detailed feedback reports, and performance progression over time.</li>
-            <li>Secure Authentication & Data Storage powered by Supabase Authentication and PostgreSQL for reliable user management and persistence.</li>
-        </ul>
-        <h4>Tech Stack Used</h4>
-        <div>
-            <span class="tech-tag">Next.js</span>
-            <span class="tech-tag">React</span>
-            <span class="tech-tag">TypeScript</span>
-            <span class="tech-tag">Tailwind CSS</span>
-            <span class="tech-tag">Framer Motion</span>
-            <span class="tech-tag">Supabase</span>
-            <span class="tech-tag">PostgreSQL</span>
-        </div>
-    </div>
-</div>
-<!-- Modal 5: FoodOrbit -->
-<div id="modal5" class="modal-overlay" onclick="closeModalOutside(event, 'modal5')">
-    <div class="modal-content">
-        <span class="close-modal" onclick="closeModal('modal5')">&times;</span>
-
-        <h2>FoodOrbit: Three-Tier Food Rescue Network</h2>
-
-        <img src="images/foodorbit-backgroun.png" 
-             alt="FoodOrbit Dashboard and Map" 
-             class="modal-image">
-
-        <p>
-            A full-stack logistics and sustainability platform designed to systematically eliminate event food waste by redirecting surplus food through three prioritized stages: human consumption, animal feed, and composting. FoodOrbit automates the redistribution process using time-sensitive tier escalation and interactive geolocation mapping. I built this application to solve the inefficiencies in traditional food rescue by creating an autonomous real-time network that connects event organizers directly with NGOs, agricultural farmers, and bio-waste agencies, ensuring zero edible food ends up in methane-producing landfills.
-        </p>
-
-        <h4>Key Features</h4>
-        <ul>
-            <li><strong>Autonomous Three-Tier Escalation</strong> that automatically shifts unclaimed food from Tier 1 (Human Consumption) to Tier 2 (Animal Feed) and Tier 3 (Composting) based on expiry timers and expanding notification radii.</li>
-            <li><strong>Interactive Geolocation Mapping</strong> built with Leaflet.js to visualize live surplus batches, display exact pickup coordinates, and render 5km, 10km, and 15km operational priority boundaries.</li>
-            <li><strong>Real-Time Cloud Synchronization</strong> powered by Firebase Firestore WebSockets (onSnapshot) to instantly update live hub availability and secure claim states across all connected browsers without page refreshes.</li>
-            <li><strong>Role-Based Access Control (RBAC)</strong> utilizing Firebase Authentication to enforce strict workflow rules, ensuring stakeholders can only view and claim surplus within their officially authorized tier.</li>
-            <li><strong>AI Sustainability Advisor</strong> integrated with Groq's Llama 3.3 LLM via secure Next.js backend routes to analyze live dashboard telemetry and generate real-time environmental impact reports.</li>
-            <li><strong>Personalized Impact Analytics</strong> dynamically calculating and displaying role-specific metrics such as landfill methane diverted, agricultural feed savings, and estimated tax receipt values.</li>
-        </ul>
-
-        <h4>Tech Stack Used</h4>
-        <div class="flex flex-wrap gap-2 mt-2">
-            <span class="tech-tag">Next.js</span>
-            <span class="tech-tag">TypeScript</span>
-            <span class="tech-tag">Tailwind CSS</span>
-            <span class="tech-tag">Firebase Auth</span>
-            <span class="tech-tag">Cloud Firestore</span>
-            <span class="tech-tag">Groq AI (Llama 3)</span>
-            <span class="tech-tag">Leaflet.js</span>
-            <span class="tech-tag">Vercel</span>
-        </div>
-    </div>
-</div>
-<!-- Modal 6: HighwayCrash Game -->
-<div id="modal6" class="modal-overlay" onclick="closeModalOutside(event, 'modal6')">
-    <div class="modal-content">
-        <span class="close-modal" onclick="closeModal('modal6')">&times;</span>
-
-        <h2>Highway Crash Game</h2>
-
-        <img src="images/HighwayCrash_background.png"
-             alt="Highway Crash Game"
-             class="modal-image">
-
-        <p>
-            Highway Crash is a 3D endless driving game developed in Unity where players navigate through highway traffic while avoiding collisions and achieving the highest possible score. I built the complete gameplay system including vehicle controls, traffic spawning, scoring, UI, camera system, and game-over mechanics using C#.
-        </p>
-
-        <h4>Key Features</h4>
-        <ul>
-            <li><strong>Realistic Car Controls:</strong> Smooth acceleration, braking, steering, and responsive vehicle physics.</li>
-
-            <li><strong>Dynamic Traffic System:</strong> AI vehicles spawn continuously with randomized lanes and timing to create challenging gameplay.</li>
-
-            <li><strong>Score & Distance Tracking:</strong> Live speed, distance traveled, and score are displayed throughout the game.</li>
-
-            <li><strong>Collision Detection:</strong> The game ends instantly when the player crashes into another vehicle.</li>
-
-            <li><strong>Smooth Follow Camera:</strong> Third-person camera follows the player's car with smooth movement.</li>
-
-            <li><strong>Multiple Playable Vehicles:</strong> Different vehicle models can be selected before starting the game.</li>
-        </ul>
-
-        <h4>Tech Stack Used</h4>
-        <div class="flex flex-wrap gap-2 mt-2">
-            <span class="tech-tag">Unity</span>
-            <span class="tech-tag">C#</span>
-            <span class="tech-tag">Visual Studio Code</span>
-            <span class="tech-tag">Git</span>
-            <span class="tech-tag">GitHub</span>
         </div>
     </div>
 </div>
