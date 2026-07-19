@@ -293,12 +293,12 @@
         <div class="portfolio-grid">
             <!-- Project 1 -->
             <div class="portfolio-item" data-aos="flip-left">
-                <div class="portfolio-img" style="background-image: url('images/project\ mangaer.png');"></div>
+                <div class="portfolio-img" style="background-image: url('images/Devpilot_AI.png');"></div>
                 <div class="portfolio-overlay">
-                    <h3>ProjectManager</h3>
+                    <h3>Devpilot AI</h3>
                     <div class="port-buttons">
-                        <a href="https://project-manager-beta-ten.vercel.app/" target="_blank">Live Demo</a>
-                        <a href="https://github.com/Santhoshcv07/ProjectManager.git" target="_blank">GitHub</a>
+                        <a href="https://dev-pilot-ai-hazel.vercel.app/" target="_blank">Live Demo</a>
+                        <a href="https://github.com/Santhoshcv07/DevPilot_AI.git" target="_blank">GitHub</a>
                     </div>
                     <!-- The onclick event triggers the modal below -->
                     <a class="btn-more-info" onclick="openModal('modal1')">More Info</a>
@@ -307,13 +307,13 @@
             
             <!-- Project 2 -->
             <div class="portfolio-item" data-aos="flip-left" data-aos-delay="100">
-                <div class="portfolio-img" style="background-image: url('images/smart\ expense.png');"></div>
-                <div class="portfolio-overlay">
-                    <h3>smart-budget-tracker</h3>
-                    <div class="port-buttons">
-                        <a href="https://smart-budget-tracker-two.vercel.app/" target="_blank">Live Demo</a>
-                        <a href="https://github.com/Santhoshcv07/smart-budget-tracker.git" target="_blank">GitHub</a>
-                    </div>
+                <div class="portfolio-img" style="background-image: url('images/MockMate\ AI.png');"></div>
+                    <div class="portfolio-overlay">
+                        <h3>MockMate AI</h3>
+                        <div class="port-buttons">
+                            <a href="https://mock-mate-ai-tau-two.vercel.app/" target="_blank">Live Demo</a>
+                            <a href="https://github.com/Santhoshcv07/MockMate-AI.git" target="_blank">GitHub</a>
+                        </div>
                     <a class="btn-more-info" onclick="openModal('modal2')">More Info</a>
                 </div>
             </div>
@@ -349,32 +349,46 @@
 <!-- Edit the text below to match your projects -->
 <!-- ========================================== -->
 
-<!-- Modal 1: ProjectManager -->
+<!-- Modal 1: Devpilot AI -->
 <div id="modal1" class="modal-overlay" onclick="closeModalOutside(event, 'modal1')">
     <div class="modal-content">
         <span class="close-modal" onclick="closeModal('modal1')">&times;</span>
-        <h2>ProjectManager</h2>
-        <img src="images/projectmanager_background.png" alt="ProjectManager Demo" class="modal-image">
+        <h2>Devpilot AI</h2>
+        <img src="images/devpliotai_background.png" alt="Devpilot AI Demo" class="modal-image">
         
-        <p>Project Flow is a secure, full-stack project management application designed to streamline workflows and track daily tasks efficiently. Built with a modern React frontend and a robust Node.js backend, the platform allows users to create accounts, manage their project data, and securely interact with a cloud-based database. It emphasizes a clean, responsive user experience and reliable RESTful API architecture.</p>
-        
-        <h4>Key Features</h4>
-        <ul>
-            <li>Secure user registration and login system protected using JWT authentication and encrypted credentials.</li>
-            <li>Seamless CRUD (Create, Read, Update, Delete) operations connected dynamically to MongoDB Atlas cloud database.</li>
-            <li>Modern and fully responsive dashboard interface built with React and Vite for smooth performance across desktop, tablet, and mobile devices.</li>
-            <li>Custom RESTful API architecture powered by Express.js ensuring secure and efficient communication between frontend and backend services</li>
-            <li>* Secure handling of database connection strings, API keys, and sensitive credentials through environment variables.</li>
-        </ul>
-        
-        <h4>Tech Stack Used</h4>
-        <div>
-            <span class="tech-tag">MongoDB</span>
-            <span class="tech-tag">Express.js</span>
-            <span class="tech-tag">React</span>
-            <span class="tech-tag">Node.js</span>
-            <span class="tech-tag">JWT</span>
-        </div>
+        <p>An advanced, AI-powered developer assistant designed to bridge the gap between large codebases
+                        and natural language understanding. By integrating seamlessly with your local file system,
+                        DevPilot AI allows you to query your code, ask for architectural explanations, and even write
+                        files directly from the chat interface. I built this platform to supercharge developer workflows
+                        with an intelligent assistant that features a blazingly fast FastAPI backend and a stunning,
+                        highly animated Next.js frontend.</p>
+                    <h4>Key Features</h4>
+                    <ul>
+                        <li>AI-Powered Chat conversing with advanced LLMs (powered by Groq) to understand complex code
+                            structures, debug issues, and generate new code.</li>
+                        <li>Deep Workspace Integration allowing you to directly select local folders and have DevPilot
+                            scan, read, and understand your entire file tree.</li>
+                        <li>In-App Code Editor featuring an integrated Monaco Editor to review and edit files seamlessly
+                            within the platform.</li>
+                        <li>Secure Authentication leveraging robust JWT-based user authentication and secure password
+                            hashing using bcrypt.</li>
+                        <li>Stunning UI/UX with a beautifully designed interface utilizing Tailwind CSS and smooth
+                            micro-animations via Framer Motion.</li>
+                        <li>High Performance Architecture pairing an asynchronous Python backend (FastAPI) with a
+                            responsive Next.js frontend for an optimal experience.</li>
+                    </ul>
+                    <h4>Tech Stack Used</h4>
+                    <div>
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Tailwind CSS</span>
+                        <span class="tech-tag">Framer Motion</span>
+                        <span class="tech-tag">FastAPI</span>
+                        <span class="tech-tag">Python</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                        <span class="tech-tag">Groq API</span>
+                    </div>
     </div>
 </div>
 
@@ -382,27 +396,44 @@
 <div id="modal2" class="modal-overlay" onclick="closeModalOutside(event, 'modal2')">
     <div class="modal-content">
         <span class="close-modal" onclick="closeModal('modal2')">&times;</span>
-        <h2>smart-budget-tracker</h2>
-        <img src="images/smart-budget-tracker-background.png" alt="Project 2 Demo" class="modal-image">
-        <p>The Smart Budget Tracker is a modern, responsive, full-stack personal finance application designed to help individuals monitor their expenses, manage monthly allowances, and analyze spending habits securely. Featuring a clean visual interface with glassmorphic elements, the application enforces individual user security via token-based sessions and provides automated local data visualization to track remaining balances dynamically.</p>
-        <h4>Key Features</h4>
-        <ul>
-            <li>Secure User Authentication using JWT-based login and registration.</li>
-            <li>Complete Expense Management with add, edit, delete, and transaction tracking functionality.</li>
-            <li>Dynamic Budget Allocation with visual spending indicators and alert thresholds.</li>
-            <li>Automated Database Synchronization and table generation on application startup.</li>
-            <li>Timeframe Filtering and Interactive Analytics for monthly expense insights.</li>
-            <li>Modern Responsive UI with custom styling, calendar inputs, and adaptive layouts.</li>
-        </ul>
-        <h4>Tech Stack Used</h4>
-        <div>
-            <span class="tech-tag">PostgreSQL</span>
-            <span class="tech-tag">JWT</span>
-            <span class="tech-tag">Node.js</span>
-            <span class="tech-tag">React.js</span>
-            <span class="tech-tag">Express.js</span>
-            <span class="tech-tag">Recharts</span>
-        </div>
+        <h2>MockMate AI</h2>
+                    <img src="images/mockmate-background.png" alt="Project 4 Demo" class="modal-image">
+                    <p>A full-stack AI-powered interview preparation platform designed to help students, job seekers,
+                        and professionals build confidence and improve their interview performance. MockMate AI
+                        simulates realistic technical and HR interviews using conversational AI, analyzes user
+                        responses, and provides detailed performance insights to accelerate career readiness.
+
+                        I built this application to solve the challenge of limited interview practice opportunities by
+                        creating an intelligent AI recruiter that conducts personalized mock interviews, evaluates
+                        communication and technical skills, identifies recurring weaknesses, and provides actionable
+                        improvement recommendations.</p>
+                    <h4>Key Features</h4>
+                    <ul>
+                        <li>Resume-Aware AI Interviews that dynamically generate interview questions based on the user's
+                            uploaded resume and skill set.</li>
+                        <li>AI Follow-Up Interview Mode enabling natural conversational interviews where subsequent
+                            questions adapt to previous answers for a realistic recruiter experience.</li>
+                        <li>Voice-Based Interview Support with speech recognition for hands-free interview practice and
+                            real-time interaction.</li>
+                        <li>Comprehensive AI Evaluation System providing Overall Score, Technical Score, Communication
+                            Score, strengths, weaknesses, and personalized recommendations.</li>
+                        <li>Advanced Analytics Dashboard featuring performance trends, skill radar charts, recurring
+                            weakness analysis, interview history, and readiness tracking.</li>
+                        <li>Interview Report Management allowing users to review past interviews, detailed feedback
+                            reports, and performance progression over time.</li>
+                        <li>Secure Authentication & Data Storage powered by Supabase Authentication and PostgreSQL for
+                            reliable user management and persistence.</li>
+                    </ul>
+                    <h4>Tech Stack Used</h4>
+                    <div>
+                        <span class="tech-tag">Next.js</span>
+                        <span class="tech-tag">React</span>
+                        <span class="tech-tag">TypeScript</span>
+                        <span class="tech-tag">Tailwind CSS</span>
+                        <span class="tech-tag">Framer Motion</span>
+                        <span class="tech-tag">Supabase</span>
+                        <span class="tech-tag">PostgreSQL</span>
+                    </div>
     </div>
 </div>
 
